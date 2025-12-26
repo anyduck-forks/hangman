@@ -7,6 +7,7 @@ import { WordCandidatesSidebar } from '../components/WordCandidatesSidebar';
 
 export default function GamePage({ settings, onGameOver }) {
     const { gameState, analysis, guessLetter, wordProgress } = useHangman({
+        shouldDoAnalysis: settings.showInfoBits,
         wordLength: settings.wordLength,
         lives: settings.maxGuesses,
         onGameEnd: onGameOver
