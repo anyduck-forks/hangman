@@ -1,30 +1,39 @@
 import { Button } from './ui/Button';
+import { useKeyPress } from '../hooks/useKeyPress';
 
-export function Keyboard({ onKeyPress, usedKeys = [], showInfoBits = false }) {
-  const keys = "abcdefghijklmnopqrstuvwxyz".split("");
+/**
+ * @typedef {Object} KeyboardProps
+ * @property {string[]} [keys]
+ * @property {number[]?} [entropies]
+ * @property {(key: string) => void} onKeyPress - Callback when a key is pressed
+ * @property {string[]} [usedKeys] - Array of keys that have been used
+ */
 
-  return (
-    <div className="grid grid-cols-7 gap-2 max-w-2xl mx-auto">
-      {keys.map((char) => {
-        const isUsed = usedKeys.includes(char);
-        return (
-          <div key={char} className="relative group">
-            <Button
-              onClick={() => onKeyPress(char)}
-              disabled={isUsed}
-              className="w-full aspect-square h-auto text-xl font-bold uppercase flex flex-col items-center justify-center"
-            >
-              {char}
-              {showInfoBits && !isUsed && (
-                <span className="text-[10px] font-normal mt-1 opacity-70">
-                  {/* Placeholder for Info Theory bits */}
-                  {(Math.random() * 5).toFixed(1)}b
-                </span>
-              )}
-            </Button>
-          </div>
-        );
-      })}
-    </div>
-  );
+/** @param {KeyboardProps} props */
+export function Keyboard({ keys, entropies, onKeyPress, usedKeys = [] }) {
+    console.assert(!entropies || keys.length === entropies.length, "Entropies must match keys length");
+    useKeyPress(keys, key => onKeyPress(key));
+
+    return (
+        <div className="grid grid-cols-7 gap-2 max-w-2xl mx-auto">
+            {keys.map((letter, index) => {
+                return (
+                    <div key={letter} className="relative group">
+                        <Button
+                            onClick={() => onKeyPress(letter)}
+                            disabled={usedKeys.includes(letter)}
+                            className="w-full aspect-square h-auto text-xl font-bold uppercase flex flex-col items-center justify-center"
+                        >
+                            {letter}
+                            {entropies && (
+                                <span className="text-[10px] font-normal mt-1 opacity-70">
+                                    {entropies[index].toFixed(1)} bit
+                                </span>
+                            )}
+                        </Button>
+                    </div>
+                );
+            })}
+        </div>
+    );
 }

@@ -1,13 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../components/ui/Button';
 import { Checkbox } from '../components/ui/Checkbox';
 import { Select } from '../components/ui/Select';
 import { Slider } from '../components/ui/Slider';
 
+
+
+const DIFFCULTIES = {
+  'easy': { wordLength: 4, maxGuesses: 8 },
+  'medium': { wordLength: 6, maxGuesses: 6 },
+  'hard': { wordLength: 8, maxGuesses: 4 },
+}
+
 export default function StartPage({ onStart }) {
   const [difficulty, setDifficulty] = useState('medium');
   const [wordLength, setWordLength] = useState(5);
   const [maxGuesses, setMaxGuesses] = useState(6);
+
+
+  useEffect(() => {
+    const settings = DIFFCULTIES[difficulty];
+    if (settings) {
+      setWordLength(settings.wordLength);
+      setMaxGuesses(settings.maxGuesses);
+    }
+  }, [difficulty]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
@@ -22,8 +39,9 @@ export default function StartPage({ onStart }) {
             const formData = new FormData(e.target);
             const settings = {
               showInfoBits: formData.get('showInfoBits') === 'on',
+              wordLength,
+              maxGuesses,
               difficulty,
-              customSettings: difficulty === 'custom' ? { wordLength, maxGuesses } : null
             };
             onStart(settings);
           }}
