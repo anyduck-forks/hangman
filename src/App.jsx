@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import StartPage from './pages/StartPage';
+import GamePage from './pages/GamePage';
+import ResultPage from './pages/ResultPage';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [gameState, setGameState] = useState('start'); // 'start', 'playing', 'result'
+  const [settings, setSettings] = useState({ showInfoBits: false, difficulty: 'medium' });
+  const [isWin, setIsWin] = useState(false);
+
+  const handleStart = (newSettings) => {
+    setSettings(newSettings);
+    setGameState('playing');
+  };
+
+  const handleGameOver = (win) => {
+    setIsWin(win);
+    setGameState('result');
+  };
+
+  const handleRestart = () => {
+    setGameState('start');
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="min-h-screen bg-gray-900 text-white">
+      {gameState === 'start' && <StartPage onStart={handleStart} />}
+      {gameState === 'playing' && <GamePage settings={settings} onGameOver={handleGameOver} />}
+      {gameState === 'result' && <ResultPage win={isWin} onRestart={handleRestart} />}
+    </div>
+  );
 }
 
-export default App
+export default App;
