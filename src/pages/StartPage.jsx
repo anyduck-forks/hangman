@@ -1,6 +1,14 @@
+import { useState } from 'react';
 import { Button } from '../components/ui/Button';
+import { Checkbox } from '../components/ui/Checkbox';
+import { Select } from '../components/ui/Select';
+import { Slider } from '../components/ui/Slider';
 
 export default function StartPage({ onStart }) {
+  const [difficulty, setDifficulty] = useState('medium');
+  const [wordLength, setWordLength] = useState(5);
+  const [maxGuesses, setMaxGuesses] = useState(6);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
       <h1 className="text-5xl font-bold mb-8 text-blue-500">Hangman</h1>
@@ -14,36 +22,57 @@ export default function StartPage({ onStart }) {
             const formData = new FormData(e.target);
             const settings = {
               showInfoBits: formData.get('showInfoBits') === 'on',
-              difficulty: formData.get('difficulty')
+              difficulty,
+              customSettings: difficulty === 'custom' ? { wordLength, maxGuesses } : null
             };
             onStart(settings);
           }}
           className="space-y-6"
         >
-          <div className="flex items-center justify-between">
-            <label htmlFor="showInfoBits" className="text-lg">
-              Show Information Bits
-            </label>
-            <input
-              type="checkbox"
-              id="showInfoBits"
-              name="showInfoBits"
-              className="w-6 h-6 text-blue-600 rounded focus:ring-blue-500 bg-gray-700 border-gray-600"
-            />
-          </div>
+          <Checkbox 
+            id="showInfoBits"
+            name="showInfoBits"
+            label="Show Information Bits"
+          />
 
-          <div className="space-y-2">
-            <label htmlFor="difficulty" className="block text-lg">Difficulty</label>
-            <select 
-              name="difficulty" 
-              id="difficulty"
-              className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white"
-            >
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </div>
+          <Select
+            id="difficulty"
+            name="difficulty"
+            label="Difficulty"
+            value={difficulty}
+            onChange={(e) => setDifficulty(e.target.value)}
+          >
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="custom">Custom</option>
+          </Select>
+
+          {difficulty === 'custom' && (
+            <div className="space-y-4 p-4 bg-gray-700/50 rounded-lg border border-gray-600 animate-in fade-in slide-in-from-top-2">
+              <Slider
+                id="wordLength"
+                label="Word Length"
+                value={wordLength}
+                min="3"
+                max="12"
+                onChange={(e) => setWordLength(parseInt(e.target.value))}
+                valueDisplay={`${wordLength} letters`}
+                color="blue"
+              />
+
+              <Slider
+                id="maxGuesses"
+                label="Max Guesses"
+                value={maxGuesses}
+                min="1"
+                max="10"
+                onChange={(e) => setMaxGuesses(parseInt(e.target.value))}
+                valueDisplay={`${maxGuesses} guesses`}
+                color="purple"
+              />
+            </div>
+          )}
 
           <Button type="submit" className="w-full py-3 text-lg mt-4">
             Start Game
