@@ -1,4 +1,4 @@
-export function Hangman({ lives = 0 }) {
+export function Hangman({ lives }) {
   const parts = [
     // Base
     <line key="base" x1="10" y1="250" x2="150" y2="250" stroke="white" strokeWidth="4" />,
@@ -18,7 +18,7 @@ export function Hangman({ lives = 0 }) {
   ];
 
   // Simple logic to show parts based on lives remaining
-  const visibleParts = parts.slice(Math.min(0, parts.length - lives)); 
+  const visibleParts = parts.slice(0, Math.max(0, parts.length - lives)); 
 
   return (
     <div className="flex justify-center mb-8">
