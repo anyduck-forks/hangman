@@ -1,4 +1,4 @@
-export default function WordProgress({ word = "", guessedLetters = [] }) {
+export function WordProgress({ word = "", guessedLetters = [] }) {
   const displayWord = word
     .split("")
     .map((char) => (guessedLetters.includes(char) ? char : "_"))

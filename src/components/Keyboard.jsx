@@ -1,6 +1,6 @@
 import { Button } from './ui/Button';
 
-export default function Keyboard({ onKeyPress, usedKeys = [], showInfoBits = false }) {
+export function Keyboard({ onKeyPress, usedKeys = [], showInfoBits = false }) {
   const keys = "abcdefghijklmnopqrstuvwxyz".split("");
 
   return (

@@ -1,4 +1,4 @@
-export default function Hangman({ lives = 0 }) {
+export function Hangman({ lives = 0 }) {
   const parts = [
     // Base
     <line key="base" x1="10" y1="250" x2="150" y2="250" stroke="white" strokeWidth="4" />,
