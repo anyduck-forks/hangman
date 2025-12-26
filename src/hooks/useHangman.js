@@ -86,19 +86,8 @@ function calculate({ wordProgress, guessedLetters }) {
         '^' + wordProgress.map(letter => letter ?? `[^${guessedLetters.join('')}]`).join('') + '$'
     );
 
-    const incorrectLetters = guessedLetters.filter(l => !wordProgress.includes(l));
-
     const wordsToCheck = Object.entries(wordsByLength[wordProgress.length]) || [];
-
-    const candidates = wordsToCheck.filter(([word, _]) => {
-        if (!pattern.test(word)) return false;
-
-        for (const char of incorrectLetters) {
-            if (word.includes(char)) return false;
-        }
-
-        return true;
-    });
+    const candidates = wordsToCheck.filter(([word, _]) => pattern.test(word));
 
     const frequencyTotal = candidates.reduce((sum, [_, freq]) => sum + freq, 0);
 
@@ -107,7 +96,7 @@ function calculate({ wordProgress, guessedLetters }) {
         const outcomes = new Map();
         for (const [word, freq] of candidates) {
             let mask = Array.from(word, char => char === letter ? '1' : '0').join('');
-            outcomes.set(mask, outcomes.get(mask) ?? 0 + freq);
+            outcomes.set(mask, (outcomes.get(mask) ?? 0) + freq);
         }
 
         let entropy = 0;
