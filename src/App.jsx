@@ -20,6 +20,7 @@ function App() {
   const handleGameOver = ({ gameState, isWon }) => {
     setEndTime(Date.now());
     console.log('Game Over:', { gameState, isWon });
+    
     setGameResults({ gameState, isWon });
     setAppState('result');
   };

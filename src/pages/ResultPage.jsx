@@ -1,13 +1,30 @@
+import { useEffect, useRef } from 'react';
 import { Button } from '../components/ui/Button';
 import { GuessDistributionChart } from '../components/GuessDistributionChart';
+import { useGameHistory } from '../hooks/useGameHistory';
 
-export default function ResultPage({ gameState, isWon, onRestart, onMenu }) {
-  const durationMs = (Date.now() - gameState.startedAt);
+export default function ResultPage({ gameState, isWon, startTime, endTime, onRestart, onMenu }) {
+  const { saveGameResult, getDistribution } = useGameHistory();
+
+  const missedCount = gameState.guesses.filter(l => !gameState.word.includes(l)).length;
+
+  useEffect(() => {
+    saveGameResult({
+      gameState,
+      isWon,
+      guessesCount: gameState.guesses.length,
+      missedGuesses: missedCount,
+      word: gameState.word
+    });
+  }, [gameState, isWon, missedCount, saveGameResult]);
+
+  const durationMs = endTime && startTime ? (endTime - startTime) : (Date.now() - gameState.startedAt);
   const minutes = Math.floor(durationMs / 60000);
   const seconds = Math.floor((durationMs % 60000) / 1000);
   const timeTaken = `${minutes}:${seconds.toString().padStart(2, '0')}`;
   
   const guesses = gameState.guesses.length;
+  const distribution = getDistribution(gameState.word.length, missedCount, isWon);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
@@ -34,7 +51,7 @@ export default function ResultPage({ gameState, isWon, onRestart, onMenu }) {
           </div>
         </div>
 
-        <GuessDistributionChart guesses={guesses} />
+        <GuessDistributionChart guesses={missedCount} distribution={distribution} isWon={isWon} />
 
         <div className="flex justify-center gap-4 pt-4">
              <Button onClick={onRestart} className="px-8 py-3 text-lg bg-blue-600 hover:bg-blue-500">
