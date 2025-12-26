@@ -15,7 +15,7 @@ export default function GamePage() {
   }
 
   const handleGameOver = ({ gameState, isWon }) => {
-    navigate(`/stats/${settings.wordLength}`, {
+    navigate(`/stats/${settings.userId}`, {
       state: { gameState, isWon, settings },
     });
   };
