@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/Button";
 import { Checkbox } from "../components/ui/Checkbox";
 import { Select } from "../components/ui/Select";
@@ -12,8 +11,7 @@ const DIFFCULTIES = {
   hard: { wordLength: 8, maxGuesses: 4 },
 };
 
-export default function StartPage() {
-  const navigate = useNavigate();
+export default function StartPage({ onStart }) {
   const { register, handleSubmit, watch, setValue } = useForm({
     defaultValues: {
       difficulty: "medium",
@@ -36,7 +34,7 @@ export default function StartPage() {
   }, [difficulty, setValue]);
 
   const onSubmit = (data) => {
-    navigate("/game", { state: { settings: data } });
+    onStart(data);
   };
 
   return (

@@ -1,29 +1,21 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, Navigate } from "react-router-dom";
 import { Button } from "../components/ui/Button";
 import { Portal } from "../components/ui/Portal";
 import { GuessDistributionChart } from "../components/GuessDistributionChart";
 import { useGameHistory } from "../hooks/useGameHistory";
 
-export default function StatsPage() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const { gameState, isWon, settings } = location.state || {};
-
-  if (!gameState || !settings) {
-    return <Navigate to="/" replace />;
-  }
-
-  const onRestart = () => {
-    navigate("/game", { state: { settings } });
-  };
-
-  const onMenu = () => {
-    navigate("/");
-  };
-
+export default function StatsPage({
+  gameState,
+  isWon,
+  startTime,
+  endTime,
+  onRestart,
+  onMenu,
+}) {
   const { saveGameResult, getDistribution } = useGameHistory();
   const [showModal, setShowModal] = useState(true);
+
+  console.log("StatsPage rendered", showModal);
 
   const missedCount = gameState.guesses.filter(
     (l) => !gameState.word.includes(l),

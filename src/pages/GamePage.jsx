@@ -1,30 +1,15 @@
-import { useLocation, useNavigate, Navigate } from "react-router-dom";
 import { useHangman, ALPHABET } from "../hooks/useHangman";
 import { Hangman } from "../components/Hangman";
 import { WordProgress } from "../components/WordProgress";
 import { Keyboard } from "../components/Keyboard";
 import { WordCandidatesSidebar } from "../components/WordCandidatesSidebar";
 
-export default function GamePage() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const settings = location.state?.settings;
-
-  if (!settings) {
-    return <Navigate to="/" replace />;
-  }
-
-  const handleGameOver = ({ gameState, isWon }) => {
-    navigate(`/stats/${settings.wordLength}`, {
-      state: { gameState, isWon, settings },
-    });
-  };
-
+export default function GamePage({ settings, onGameOver }) {
   const { gameState, analysis, guessLetter, wordProgress } = useHangman({
     shouldDoAnalysis: settings.showInfoBits,
     wordLength: settings.wordLength,
     lives: settings.maxGuesses,
-    onGameEnd: handleGameOver,
+    onGameEnd: onGameOver,
   });
 
   return (
