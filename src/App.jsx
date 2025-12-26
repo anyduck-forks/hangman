@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<StartPage />} />
         <Route path="/game" element={<GamePage />} />
-        <Route path="/stats/:wordLength" element={<StatsPage />} />
+        <Route path="/stats/:userId" element={<StatsPage />} />
       </Routes>
     </div>
   );

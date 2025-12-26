@@ -7,19 +7,24 @@ export function useGameHistory() {
   const [history, setHistory] = useLocalStorage(STORAGE_KEY, []);
 
   const saveGameResult = useCallback(
-    (result) => {
+    (result, userId) => {
       setHistory((prevHistory) => {
-        return [...prevHistory, { ...result, timestamp: Date.now() }];
+        return [...prevHistory, { ...result, userId, timestamp: Date.now() }];
       });
     },
     [setHistory],
   );
 
   const getDistribution = useCallback(
-    (wordLength = null, currentGuesses = null, currentIsWon = null) => {
+    (userId, wordLength = null, currentGuesses = null, currentIsWon = null) => {
       const distribution = {};
 
       history.forEach((game) => {
+        // Filter by user ID
+        if (userId && game.userId !== userId) {
+          return;
+        }
+
         // Filter by word length if specified
         const gameWordLength = game.word
           ? game.word.length

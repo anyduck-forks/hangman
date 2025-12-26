@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, Navigate } from "react-router-dom";
+import { useLocation, useNavigate, Navigate, useParams } from "react-router-dom";
 import { Button } from "../components/ui/Button";
 import { Portal } from "../components/ui/Portal";
 import { GuessDistributionChart } from "../components/GuessDistributionChart";
@@ -8,6 +8,7 @@ import { useGameHistory } from "../hooks/useGameHistory";
 export default function StatsPage() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { userId } = useParams();
   const { gameState, isWon, settings } = location.state || {};
 
   if (!gameState || !settings) {
@@ -30,14 +31,17 @@ export default function StatsPage() {
   ).length;
 
   useEffect(() => {
-    saveGameResult({
-      gameState,
-      isWon,
-      guessesCount: gameState.guesses.length,
-      missedGuesses: missedCount,
-      word: gameState.word,
-    });
-  }, [gameState, isWon, missedCount, saveGameResult]);
+    saveGameResult(
+      {
+        gameState,
+        isWon,
+        guessesCount: gameState.guesses.length,
+        missedGuesses: missedCount,
+        word: gameState.word,
+      },
+      userId,
+    );
+  }, [gameState, isWon, missedCount, saveGameResult, userId]);
 
   const durationMs = Date.now() - gameState.startedAt;
   const minutes = Math.floor(durationMs / 60000);
@@ -46,6 +50,7 @@ export default function StatsPage() {
 
   const guesses = gameState.guesses.length;
   const distribution = getDistribution(
+    userId,
     gameState.word.length,
     missedCount,
     isWon,
