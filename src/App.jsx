@@ -3,50 +3,47 @@ import StartPage from './pages/StartPage';
 import GamePage from './pages/GamePage';
 import ResultPage from './pages/ResultPage';
 
+const APP_STATE = {
+  IDLE: 'idle',
+  PLAYING: 'playing',
+  RESULT: 'result',
+};
+
 function App() {
-  const [appState, setAppState] = useState('idle'); // idle, playing, result
-  const [settings, setSettings] = useState({ showInfoBits: false, maxGuesses: 0, wordLength: 0, difficulty: 'medium' });
+  const [appState, setAppState] = useState(APP_STATE.IDLE);
+  const [settings, setSettings] = useState(null);
   const [gameResults, setGameResults] = useState(null);
-  const [startTime, setStartTime] = useState(null);
-  const [endTime, setEndTime] = useState(null);
 
   const handleStart = (newSettings) => {
     setSettings(newSettings);
-    setAppState('playing');
-    setStartTime(Date.now());
-    setEndTime(null);
+    setAppState(APP_STATE.PLAYING);
   };
 
   const handleGameOver = ({ gameState, isWon }) => {
-    setEndTime(Date.now());
-    console.log('Game Over:', { gameState, isWon });
-    
     setGameResults({ gameState, isWon });
-    setAppState('result');
+    setAppState(APP_STATE.RESULT);
   };
 
   const handleRestart = () => {
-    setAppState('playing');
-    setStartTime(Date.now());
-    setEndTime(null);
+    setAppState(APP_STATE.PLAYING);
   };
 
   const handleMenu = () => {
-    setAppState('idle');
+    setAppState(APP_STATE.IDLE);
   };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {appState === 'idle' && <StartPage onStart={handleStart} />}
+      {appState === APP_STATE.IDLE && <StartPage onStart={handleStart} />}
       
-      {appState === 'playing' && (
+      {appState === APP_STATE.PLAYING && (
         <GamePage 
           settings={settings}
           onGameOver={handleGameOver}
         />
       )}
       
-      {appState === 'result' && gameResults && (
+      {appState === APP_STATE.RESULT && gameResults && (
         <ResultPage 
           gameState={gameResults.gameState}
           isWon={gameResults.isWon}
