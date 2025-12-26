@@ -11,7 +11,7 @@ export const ALPHABET = "qwertyuiopasdfghjklzxcvbnm".split("");
  * @property {number} lives - The current count of incorrect guesses.
  */
 
-export function useHangman({ wordLength, lives, onGameEnd }) {
+export function useHangman({ shouldDoAnalysis, wordLength, lives, onGameEnd }) {
     /** @type {ReturnType<typeof useState<GameState>>} */
     const [gameState, setGameState] = useState({
         word: getRandomPopularWord(wordLength),
@@ -27,10 +27,13 @@ export function useHangman({ wordLength, lives, onGameEnd }) {
         gameState.guesses.includes(letter) ? letter : null
     );
 
-
     useEffect(() => {
-        setAnalysis(calculate({ wordProgress, guessedLetters: gameState.guesses }));
-    }, [wordProgress, gameState.guesses]);
+        if (shouldDoAnalysis) {
+            setAnalysis(calculate({ wordProgress, guessedLetters: gameState.guesses }));
+        } else {
+            setAnalysis(null);
+        }
+    }, [wordProgress, gameState.guesses, shouldDoAnalysis]);
 
 
     const guessLetter = useCallback((letter) => {
@@ -65,10 +68,10 @@ export function useHangman({ wordLength, lives, onGameEnd }) {
 
 
 function getRandomPopularWord(wordLength, top = 1000) {
-    const words = wordsByLength[wordLength];
+    const words = Object.keys(wordsByLength[wordLength]);
     const index = Math.floor(Math.random() * Math.min(top, words.length));
 
-    return Object.keys(words)[index];
+    return words[index];
 }
 
 /**

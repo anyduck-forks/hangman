@@ -4,7 +4,7 @@ export function GuessDistributionChart({ guesses, distribution = [], isWon }) {
   return (
     <div className="mb-8">
       <h3 className="text-xl font-semibold mb-6 text-center text-gray-200">Missed Guesses Distribution</h3>
-      <div className="h-64 bg-gray-900/50 rounded-lg p-6 border border-gray-700 flex items-end justify-between gap-2">
+      <div className="h-128 bg-gray-900/50 rounded-lg p-6 border border-gray-700 flex items-end justify-between gap-2">
         {distribution.map((bar) => {
             const isActive = (isWon && parseInt(bar.label) === guesses) || (bar.isFail && !isWon);
             const styleHeight = bar.count > 0 ? Math.max(parseInt(bar.height), 5) + '%' : '1%';
