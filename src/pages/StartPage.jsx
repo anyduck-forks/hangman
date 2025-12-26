@@ -55,16 +55,7 @@ export default function StartPage() {
         <h2 className="text-2xl mb-6">Game Settings</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          <div className="flex flex-col gap-2">
-            <label htmlFor="userId" className="text-sm font-medium text-gray-300">
-              User ID
-            </label>
-            <input
-              id="userId"
-              className="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-              {...register("userId", { required: true })}
-            />
-          </div>
+          <input type="hidden" {...register("userId", { required: true })} />
 
           <Checkbox
             id="showInfoBits"
