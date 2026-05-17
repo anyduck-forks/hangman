@@ -2,12 +2,18 @@
   "name": "hangman",
   "version": "0.0.0",
   "type": "module",
+  "workspaces": [
+    "docs"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "license:check": "license-checker --production --out license-checker.txt"
+    "license:check": "license-checker --production --out license-checker.txt",
+    "docs:dev": "npm --workspace docs run start",
+    "docs:build": "npm --workspace docs run build",
+    "docs:serve": "npm --workspace docs run serve"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
