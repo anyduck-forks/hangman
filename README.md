@@ -39,7 +39,9 @@ npm run lint
 
 ## Документація
 
-Додаткова документація публікується у Docusaurus. TODO: add link after publish
+Додаткова документація публікується у Docusaurus:
+
+https://anyduck-forks.github.io/hangman/docs
 
 ```bash
 npm run docs:dev
@@ -48,6 +50,8 @@ npm run docs:dev
 ## Storybook
 
 Storybook використовується для UI-компонентів.
+
+https://anyduck-forks.github.io/hangman/storybook
 
 ```bash
 npm run storybook
