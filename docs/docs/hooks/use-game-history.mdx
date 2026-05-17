@@ -1,0 +1,16 @@
+---
+title: "useGameHistory"
+---
+
+# useGameHistory
+
+**Файл:** src/hooks/useGameHistory.js
+
+**Призначення:**
+- Зберiгання локальної iсторiї iгор у localStorage.
+- Розрахунок розподiлу промахiв для графiка статистики.
+
+**Повертає:**
+- `history` — масив записiв iгор.
+- `saveGameResult(result, userId)` — записати результат.
+- `getDistribution(userId, wordLength, currentGuesses, currentIsWon)` — данi для графiка.
