@@ -13,7 +13,9 @@
     "license:check": "license-checker --production --out license-checker.txt",
     "docs:dev": "npm --workspace docs run start",
     "docs:build": "npm --workspace docs run build",
-    "docs:serve": "npm --workspace docs run serve"
+    "docs:serve": "npm --workspace docs run serve",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
@@ -35,7 +37,20 @@
     "globals": "^16.5.0",
     "license-checker": "^25.0.1",
     "prettier": "3.7.4",
-    "vite": "npm:rolldown-vite@7.2.5"
+    "vite": "npm:rolldown-vite@7.2.5",
+    "storybook": "^10.4.0",
+    "@storybook/react-vite": "^10.4.0",
+    "@chromatic-com/storybook": "^5.2.1",
+    "@storybook/addon-vitest": "^10.4.0",
+    "@storybook/addon-a11y": "^10.4.0",
+    "@storybook/addon-docs": "^10.4.0",
+    "@storybook/addon-mcp": "^0.6.0",
+    "prop-types": "^15.8.1",
+    "eslint-plugin-storybook": "^10.4.0",
+    "vitest": "^4.1.6",
+    "playwright": "^1.60.0",
+    "@vitest/browser-playwright": "^4.1.6",
+    "@vitest/coverage-v8": "^4.1.6"
   },
   "overrides": {
     "vite": "npm:rolldown-vite@7.2.5"
