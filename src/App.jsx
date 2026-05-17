@@ -9,10 +9,10 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <Routes>
-        <Route path="/" element={<StartPage />} />
-        <Route path="/game" element={<GamePage />} />
-        <Route path="/stats/:userId" element={<StatsPage />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/hangman/" element={<StartPage />} />
+        <Route path="/hangman/game" element={<GamePage />} />
+        <Route path="/hangman/stats/:userId" element={<StatsPage />} />
+        <Route path="/hangman/privacy" element={<PrivacyPage />} />
       </Routes>
       <CookieConsentPopup />
     </div>
