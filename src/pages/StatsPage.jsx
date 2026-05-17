@@ -4,6 +4,7 @@ import { Button } from "../components/ui/Button";
 import { Portal } from "../components/ui/Portal";
 import { GuessDistributionChart } from "../components/GuessDistributionChart";
 import { useGameHistory } from "../hooks/useGameHistory";
+import { useCookieConsent, ANONYMOUS_UUID } from "../hooks/useCookieConsent";
 
 export default function StatsPage() {
   const location = useLocation();
@@ -24,7 +25,9 @@ export default function StatsPage() {
   };
 
   const { saveGameResult, getDistribution } = useGameHistory();
+  const { isDeclined } = useCookieConsent();
   const [showModal, setShowModal] = useState(true);
+  const effectiveUserId = isDeclined ? ANONYMOUS_UUID : userId;
 
   const missedCount = gameState.guesses.filter(
     (l) => !gameState.word.includes(l),
@@ -39,9 +42,9 @@ export default function StatsPage() {
         missedGuesses: missedCount,
         word: gameState.word,
       },
-      userId,
+      effectiveUserId,
     );
-  }, [gameState, isWon, missedCount, saveGameResult, userId]);
+  }, [gameState, isWon, missedCount, saveGameResult, effectiveUserId]);
 
   const durationMs = Date.now() - gameState.startedAt;
   const minutes = Math.floor(durationMs / 60000);
@@ -50,7 +53,7 @@ export default function StatsPage() {
 
   const guesses = gameState.guesses.length;
   const distribution = getDistribution(
-    userId,
+    effectiveUserId,
     gameState.word.length,
     missedCount,
     isWon,
