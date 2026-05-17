@@ -18,6 +18,12 @@ const config = {
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   "addons": [],
-  "framework": getAbsolutePath('@storybook/react-vite')
+  "framework": getAbsolutePath('@storybook/react-vite'),
+  viteFinal: (config) => {
+    return {
+      ...config,
+      base: "/hangman/storybook/",
+    };
+  }
 };
 export default config;
