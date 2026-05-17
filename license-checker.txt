@@ -1,0 +1,254 @@
+├─ @jridgewell/gen-mapping@0.3.13
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@jridgewell/gen-mapping
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@jridgewell/gen-mapping/LICENSE
+├─ @jridgewell/remapping@2.3.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@jridgewell/remapping
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@jridgewell/remapping/LICENSE
+├─ @jridgewell/resolve-uri@3.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/resolve-uri
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@jridgewell/resolve-uri
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@jridgewell/resolve-uri/LICENSE
+├─ @jridgewell/sourcemap-codec@1.5.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@jridgewell/sourcemap-codec
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@jridgewell/sourcemap-codec/LICENSE
+├─ @jridgewell/trace-mapping@0.3.31
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jridgewell/sourcemaps
+│  ├─ publisher: Justin Ridgewell
+│  ├─ email: justin@ridgewell.name
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@jridgewell/trace-mapping
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@jridgewell/trace-mapping/LICENSE
+├─ @oxc-project/runtime@0.97.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/oxc-project/oxc
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@oxc-project/runtime
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@oxc-project/runtime/LICENSE
+├─ @oxc-project/types@0.97.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/oxc-project/oxc
+│  ├─ publisher: Boshen and oxc contributors
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@oxc-project/types
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@oxc-project/types/LICENSE
+├─ @rolldown/binding-linux-x64-gnu@1.0.0-beta.50
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rolldown/rolldown
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@rolldown/binding-linux-x64-gnu
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@rolldown/binding-linux-x64-gnu/README.md
+├─ @rolldown/binding-linux-x64-musl@1.0.0-beta.50
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rolldown/rolldown
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@rolldown/binding-linux-x64-musl
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@rolldown/binding-linux-x64-musl/README.md
+├─ @rolldown/pluginutils@1.0.0-beta.50
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rolldown/rolldown
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/rolldown/node_modules/@rolldown/pluginutils
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/rolldown/node_modules/@rolldown/pluginutils/LICENSE
+├─ @tailwindcss/node@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@tailwindcss/node
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@tailwindcss/node/LICENSE
+├─ @tailwindcss/oxide-linux-x64-gnu@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@tailwindcss/oxide-linux-x64-gnu
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@tailwindcss/oxide-linux-x64-gnu/LICENSE
+├─ @tailwindcss/oxide-linux-x64-musl@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@tailwindcss/oxide-linux-x64-musl
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@tailwindcss/oxide-linux-x64-musl/LICENSE
+├─ @tailwindcss/oxide@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@tailwindcss/oxide
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@tailwindcss/oxide/LICENSE
+├─ @tailwindcss/vite@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/@tailwindcss/vite
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/@tailwindcss/vite/LICENSE
+├─ cookie@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jshttp/cookie
+│  ├─ publisher: Roman Shtylman
+│  ├─ email: shtylman@gmail.com
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/cookie
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/cookie/LICENSE
+├─ detect-libc@2.1.2
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/lovell/detect-libc
+│  ├─ publisher: Lovell Fuller
+│  ├─ email: npm@lovell.info
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/detect-libc
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/detect-libc/LICENSE
+├─ enhanced-resolve@5.18.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/webpack/enhanced-resolve
+│  ├─ publisher: Tobias Koppers @sokra
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/enhanced-resolve
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/enhanced-resolve/LICENSE
+├─ fdir@6.5.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/thecodrr/fdir
+│  ├─ publisher: thecodrr
+│  ├─ email: thecodrr@protonmail.com
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/fdir
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/fdir/LICENSE
+├─ graceful-fs@4.2.11
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/node-graceful-fs
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/graceful-fs
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/graceful-fs/LICENSE
+├─ hangman@0.0.0
+│  ├─ licenses: MIT*
+│  ├─ path: /home/anyduck/projects/REACT
+│  └─ licenseFile: /home/anyduck/projects/REACT/LICENSE
+├─ jiti@2.6.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/unjs/jiti
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/jiti
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/jiti/LICENSE
+├─ lightningcss-linux-x64-gnu@1.30.2
+│  ├─ licenses: MPL-2.0
+│  ├─ repository: https://github.com/parcel-bundler/lightningcss
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/lightningcss-linux-x64-gnu
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/lightningcss-linux-x64-gnu/LICENSE
+├─ lightningcss-linux-x64-musl@1.30.2
+│  ├─ licenses: MPL-2.0
+│  ├─ repository: https://github.com/parcel-bundler/lightningcss
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/lightningcss-linux-x64-musl
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/lightningcss-linux-x64-musl/LICENSE
+├─ lightningcss@1.30.2
+│  ├─ licenses: MPL-2.0
+│  ├─ repository: https://github.com/parcel-bundler/lightningcss
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/lightningcss
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/lightningcss/LICENSE
+├─ magic-string@0.30.21
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Rich-Harris/magic-string
+│  ├─ publisher: Rich Harris
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/magic-string
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/magic-string/LICENSE
+├─ nanoid@3.3.11
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ai/nanoid
+│  ├─ publisher: Andrey Sitnik
+│  ├─ email: andrey@sitnik.ru
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/nanoid
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/nanoid/LICENSE
+├─ picocolors@1.1.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/alexeyraspopov/picocolors
+│  ├─ publisher: Alexey Raspopov
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/picocolors
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/picocolors/LICENSE
+├─ picomatch@4.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/micromatch/picomatch
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/picomatch
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/picomatch/LICENSE
+├─ postcss@8.5.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/postcss/postcss
+│  ├─ publisher: Andrey Sitnik
+│  ├─ email: andrey@sitnik.ru
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/postcss
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/postcss/LICENSE
+├─ react-dom@19.2.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/react-dom
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/react-dom/LICENSE
+├─ react-hook-form@7.69.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/react-hook-form/react-hook-form
+│  ├─ publisher: Beier
+│  ├─ email: bluebill1049@hotmail.com
+│  ├─ url: Bill
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/react-hook-form
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/react-hook-form/LICENSE
+├─ react-router-dom@7.11.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/remix-run/react-router
+│  ├─ publisher: Remix Software
+│  ├─ email: hello@remix.run
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/react-router-dom
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/react-router-dom/LICENSE.md
+├─ react-router@7.11.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/remix-run/react-router
+│  ├─ publisher: Remix Software
+│  ├─ email: hello@remix.run
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/react-router
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/react-router/LICENSE.md
+├─ react@19.2.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/react
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/react/LICENSE
+├─ rolldown-vite@7.2.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/vitejs/rolldown-vite
+│  ├─ publisher: Evan You
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/vite
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/vite/LICENSE.md
+├─ rolldown@1.0.0-beta.50
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rolldown/rolldown
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/rolldown
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/rolldown/LICENSE
+├─ scheduler@0.27.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/facebook/react
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/scheduler
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/scheduler/LICENSE
+├─ set-cookie-parser@2.7.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nfriedly/set-cookie-parser
+│  ├─ publisher: Nathan Friedly
+│  ├─ url: http://nfriedly.com/
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/set-cookie-parser
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/set-cookie-parser/LICENSE
+├─ source-map-js@1.2.1
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/7rulnik/source-map-js
+│  ├─ publisher: Valentin 7rulnik Semirulnik
+│  ├─ email: v7rulnik@gmail.com
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/source-map-js
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/source-map-js/LICENSE
+├─ tailwindcss@4.1.18
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tailwindlabs/tailwindcss
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/tailwindcss
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/tailwindcss/LICENSE
+├─ tapable@2.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/webpack/tapable
+│  ├─ publisher: Tobias Koppers @sokra
+│  ├─ path: /home/anyduck/projects/REACT/node_modules/tapable
+│  └─ licenseFile: /home/anyduck/projects/REACT/node_modules/tapable/LICENSE
+└─ tinyglobby@0.2.15
+   ├─ licenses: MIT
+   ├─ repository: https://github.com/SuperchupuDev/tinyglobby
+   ├─ publisher: Superchupu
+   ├─ path: /home/anyduck/projects/REACT/node_modules/tinyglobby
+   └─ licenseFile: /home/anyduck/projects/REACT/node_modules/tinyglobby/LICENSE
