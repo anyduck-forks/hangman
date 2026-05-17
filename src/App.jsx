@@ -3,6 +3,7 @@ import StartPage from "./pages/StartPage";
 import GamePage from "./pages/GamePage";
 import StatsPage from "./pages/StatsPage";
 import PrivacyPage from "./pages/PrivacyPage";
+import { CookieConsentPopup } from "./components/CookieConsentPopup";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/stats/:userId" element={<StatsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
       </Routes>
+      <CookieConsentPopup />
     </div>
   );
 }

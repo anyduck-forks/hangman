@@ -2,15 +2,25 @@ import { createPortal } from "react-dom";
 
 const modalRootEl = document.querySelector("#modal");
 
-export const Portal = ({ title, children, showModal, onClose }) => {
+export const Portal = ({
+  title,
+  children,
+  showModal,
+  onClose,
+  showCloseButton = true,
+  overlayClassName =
+    "fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200",
+  panelClassName =
+    "bg-gray-800 rounded-xl shadow-2xl w-full max-w-2xl border border-gray-700 flex flex-col max-h-[90vh] animate-in zoom-in-95 duration-200",
+}) => {
   console.log("Portal rendered", showModal);
   return showModal
     ? createPortal(
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200">
-          <div className="bg-gray-800 rounded-xl shadow-2xl w-full max-w-2xl border border-gray-700 flex flex-col max-h-[90vh] animate-in zoom-in-95 duration-200">
+        <div className={overlayClassName}>
+          <div className={panelClassName}>
             <div className="flex items-center justify-between p-6 border-b border-gray-700 shrink-0">
               <h2 className="text-2xl font-bold text-white">{title}</h2>
-              {
+              {showCloseButton && onClose ? (
                 <button
                   onClick={onClose}
                   className="text-gray-400 hover:text-white transition-colors p-1 hover:bg-gray-700 rounded-lg"
@@ -31,7 +41,7 @@ export const Portal = ({ title, children, showModal, onClose }) => {
                     />
                   </svg>
                 </button>
-              }
+              ) : null}
             </div>
             <div className="p-6 overflow-y-auto custom-scrollbar">
               {children}
