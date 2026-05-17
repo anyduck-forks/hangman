@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { Button } from "../components/ui/Button";
 import { Checkbox } from "../components/ui/Checkbox";
@@ -104,6 +104,11 @@ export default function StartPage() {
             Start Game
           </Button>
         </form>
+        <div className="mt-6 text-center">
+          <Link to="/privacy" className="text-blue-400 hover:text-blue-300">
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </div>
   );

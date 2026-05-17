@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import StartPage from "./pages/StartPage";
 import GamePage from "./pages/GamePage";
 import StatsPage from "./pages/StatsPage";
+import PrivacyPage from "./pages/PrivacyPage";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" element={<StartPage />} />
         <Route path="/game" element={<GamePage />} />
         <Route path="/stats/:userId" element={<StatsPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
       </Routes>
     </div>
   );
